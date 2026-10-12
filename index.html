@@ -76,7 +76,6 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 <section class="founders" id="founders"><div class="kicker">03 / The team</div><h2>Meet the founders.</h2><p class="section-note">Five people building one idea together.</p><div class="founder-grid">
 <div class="founder"><span>FOUNDER 01</span><h3>Dylan</h3><p>LOSTSOCIETY</p></div>
 <div class="founder"><span>FOUNDER 02</span><h3>Eli</h3><p>LOSTSOCIETY</p></div>
-<div class="founder"><span>FOUNDER 03</span><h3>Jordan.s</h3><p>LOSTSOCIETY</p></div>
 <div class="founder"><span>FOUNDER 04</span><h3>Tyler</h3><p>LOSTSOCIETY</p></div>
 <div class="founder"><span>FOUNDER 05</span><h3>Karter</h3><p>LOSTSOCIETY</p></div>
 </div></section>
@@ -88,5 +87,6 @@ const menu=document.getElementById('menu'),nav=document.getElementById('nav');
 menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.textContent=nav.classList.contains('open')?'×':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
+
 </script>
 </body></html>

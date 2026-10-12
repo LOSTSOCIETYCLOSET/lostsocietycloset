@@ -42,22 +42,21 @@ h1{font-size:clamp(56px,8vw,112px);line-height:.87;letter-spacing:-.09em;margin:
 .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.button{display:inline-block;background:#171717;color:#fff;padding:15px 19px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid #171717}.button:hover{background:transparent;color:#171717}.button.light{background:transparent;color:#171717}.button.light:hover{background:#171717;color:#fff}
 .logo-panel{background:#fff;border:1px solid #e5e5e2;min-height:330px;display:flex;align-items:center;justify-content:center;padding:35px;position:relative}.logo-panel img{width:100%;max-width:570px;height:auto;object-fit:contain}.logo-caption{position:absolute;bottom:15px;left:18px;font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:#777}
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 8vw;display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#555}
-section.content{padding:85px 8vw}.section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.section-top h2,.story h2,.founders h2,.updates h2{font-size:clamp(34px,5vw,60px);line-height:.95;letter-spacing:-.07em;text-transform:uppercase;margin:12px 0 0}.section-note{font-size:12px;color:#666;line-height:1.7;max-width:310px}
+section.content{padding:85px 8vw}.section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.section-top h2,.story h2,.updates h2{font-size:clamp(34px,5vw,60px);line-height:.95;letter-spacing:-.07em;text-transform:uppercase;margin:12px 0 0}.section-note{font-size:12px;color:#666;line-height:1.7;max-width:310px}
 .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product-card{background:#efefec;min-height:210px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #e3e3df}.product-number{font-size:9px;letter-spacing:.13em;color:#777;text-transform:uppercase}.coming{font-size:clamp(24px,3vw,39px);font-weight:900;letter-spacing:-.07em;text-transform:uppercase;line-height:.95}.product-bottom{border-top:1px solid #d4d4cf;padding-top:14px;display:flex;justify-content:space-between;gap:10px;align-items:center}.product-bottom span{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#777}
 .story{background:#e9e9e6;padding:75px 8vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.story p{font-size:14px;line-height:1.9;color:#4e4e4e;max-width:470px}.story-mark{font-size:clamp(60px,12vw,150px);letter-spacing:-.12em;font-weight:900;text-align:center;line-height:.9}.story-mark span{display:block;font-size:10px;letter-spacing:.2em;margin-top:20px;font-weight:400}
-.founders{padding:85px 8vw}.founder-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:30px}.founder{border-top:1px solid #999;padding:17px 8px 22px}.founder span{font-size:9px;letter-spacing:.1em;color:#777}.founder h3{font-size:19px;text-transform:uppercase;letter-spacing:-.04em;margin:25px 0 6px}.founder p{font-size:9px;color:#777;letter-spacing:.1em;text-transform:uppercase;margin:0}
 .updates{padding:65px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:35px;align-items:center}.updates p{font-size:12px;color:#666;line-height:1.7}
 footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:9px;text-transform:uppercase;letter-spacing:.1em}footer a:hover{opacity:.6}.footer-links{display:flex;gap:18px}
-@media(max-width:760px){header{padding:0 5vw}.menu{display:block}nav{display:none;position:absolute;top:71px;left:0;right:0;padding:22px 6vw;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}.hero{grid-template-columns:1fr;padding:45px 6vw 55px;gap:35px}.logo-panel{min-height:240px}.strip{padding:13px 6vw;flex-wrap:wrap}.section-top{display:block}.section-note{margin-top:16px}.products{grid-template-columns:1fr}.product-card{min-height:180px}.story{grid-template-columns:1fr;gap:25px;padding:60px 6vw}.story-mark{text-align:left}.founder-grid{grid-template-columns:repeat(2,1fr);gap:22px 10px}.founder:last-child{grid-column:span 2}.updates{flex-direction:column;align-items:flex-start;padding:55px 6vw}}
-@media(max-width:450px){h1{font-size:58px}.strip{font-size:8px}section.content,.founders{padding:65px 6vw}.founder-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;align-items:flex-start}}
+@media(max-width:760px){header{padding:0 5vw}.menu{display:block}nav{display:none;position:absolute;top:71px;left:0;right:0;padding:22px 6vw;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}.hero{grid-template-columns:1fr;padding:45px 6vw 55px;gap:35px}.logo-panel{min-height:240px}.strip{padding:13px 6vw;flex-wrap:wrap}.section-top{display:block}.section-note{margin-top:16px}.products{grid-template-columns:1fr}.product-card{min-height:180px}.story{grid-template-columns:1fr;gap:25px;padding:60px 6vw}.story-mark{text-align:left}.updates{flex-direction:column;align-items:flex-start;padding:55px 6vw}}
+@media(max-width:450px){h1{font-size:58px}.strip{font-size:8px}section.content{padding:65px 6vw}footer{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
-<div class="announcement">🍂 The Fall Collection is here — Fall Memories &amp; Freedom — $60 🍂</div>
+<div class="announcement">🍂 The Fall Collection is here — Fall Memories, Freedom &amp; Fallen Freedom — $60 🍂</div>
 <header>
 <a class="brand" href="#home">LOSTSOCIETY<small>®</small></a>
 <button class="mobile-cart" type="button" data-open-cart aria-label="Open cart">Cart (<span data-cart-count>0</span>)</button><button class="menu" id="menu" aria-label="Open menu">☰</button>
-<nav id="nav"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="#founders">Founders</a><a href="#updates">Stay updated</a><button class="navbutton cart-toggle" type="button" data-open-cart>Cart (<span data-cart-count>0</span>)</button></nav>
+<nav id="nav"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="#updates">Stay updated</a><button class="navbutton cart-toggle" type="button" data-open-cart>Cart (<span data-cart-count>0</span>)</button></nav>
 </header>
 <main id="home">
 <section class="hero"><div class="leaves" aria-hidden="true"><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i></div>
@@ -70,17 +69,11 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 <div class="products">
 <button type="button" class="product-card shoppable" data-product="fall-memories"><span class="product-number">FIRST DROP</span><img src="/fall-memories.png" alt="Fall Memories — LOSTSOCIETY first drop"><div class="product-bottom"><span class="product-name">Fall Memories</span><span class="product-name">$60</span></div><span class="shop-hint">View &amp; add to cart →</span></button>
 <button type="button" class="product-card shoppable" data-product="freedom"><span class="product-number">SECOND DROP</span><img src="/freedom.png" alt="Freedom — LOSTSOCIETY second drop"><div class="product-bottom"><span class="product-name">Freedom</span><span class="product-name">$60</span></div><span class="shop-hint">View &amp; add to cart →</span></button>
-<article class="product-card"><span class="product-number">THIRD DROP</span><div class="coming">Coming<br>Soon.</div><div class="product-bottom"><span>LOSTSOCIETY</span><span>03</span></div></article>
+<button type="button" class="product-card shoppable" data-product="fallen-freedom"><span class="product-number">THIRD DROP</span><img src="/image.png" alt="Fallen Freedom — LOSTSOCIETY third drop"><div class="product-bottom"><span class="product-name">Fallen Freedom</span><span class="product-name">$60</span></div><span class="shop-hint">View &amp; add to cart →</span></button>
 </div>
 </section>
-<section class="story" id="story"><div><div class="kicker">02 / Why we started</div><h2>Made by us.<br>For our people.</h2></div><div><p>LOSTSOCIETY started with a simple idea: make something that feels like us. No need to overdo it. Just good design, a strong name, and a group of people who believe in what we're building.</p><p>We're at the beginning of the journey, and this is where it starts.</p><a class="button light" href="#founders">Meet the founders ↘</a></div></section>
-<section class="founders" id="founders"><div class="kicker">03 / The team</div><h2>Meet the founders.</h2><p class="section-note">Five people building one idea together.</p><div class="founder-grid">
-<div class="founder"><span>FOUNDER 01</span><h3>Dylan</h3><p>LOSTSOCIETY</p></div>
-<div class="founder"><span>FOUNDER 02</span><h3>Eli</h3><p>LOSTSOCIETY</p></div>
-<div class="founder"><span>FOUNDER 04</span><h3>Tyler</h3><p>LOSTSOCIETY</p></div>
-<div class="founder"><span>FOUNDER 05</span><h3>Karter</h3><p>LOSTSOCIETY</p></div>
-</div></section>
-<section class="updates" id="updates"><div><div class="kicker">04 / Stay in the loop</div><h2>More soon.</h2><p>Follow along while we get the first collection ready.</p></div></section>
+<section class="story" id="story"><div><div class="kicker">02 / Why we started</div><h2>Made by us.<br>For our people.</h2></div><div><p>LOSTSOCIETY started with a simple idea: make something that feels like us. No need to overdo it. Just good design, a strong name, and a group of people who believe in what we're building.</p><p>We're at the beginning of the journey, and this is where it starts.</p></div></section>
+<section class="updates" id="updates"><div><div class="kicker">03 / Stay in the loop</div><h2>More soon.</h2><p>Follow along while we get the first collection ready.</p></div></section>
 </main>
 <div class="overlay" id="overlay" hidden></div>
 <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="pm-name" hidden>
@@ -97,7 +90,7 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 <div class="drawer-lines" id="drawer-lines"></div>
 <div class="drawer-bottom"><div class="row"><span>Subtotal</span><strong id="drawer-subtotal">$0.00</strong></div><p>Shipping is calculated at checkout.</p><a class="button wide" href="/checkout" id="drawer-checkout">Checkout</a></div>
 </aside>
-<footer><div>LOSTSOCIETY® (Lost Society Closet) © <span id="year"></span></div><div class="footer-links"><a href="#home">Back to top ↑</a><a href="#founders">Founders</a></div></footer>
+<footer><div>LOSTSOCIETY® (Lost Society Closet) © <span id="year"></span></div><div class="footer-links"><a href="#home">Back to top ↑</a></div></footer>
 <script src="/cart.js"></script>
 <script>
 const menu=document.getElementById('menu'),nav=document.getElementById('nav');

@@ -52,3 +52,19 @@ footer{background:var(--bark)}
 .qty .remove{width:auto;border:0;background:none;text-decoration:underline;font-size:10px;color:var(--muted);margin-left:6px}
 .qty.big button{width:38px;height:38px}.qty.big span{min-width:24px;text-align:center}
 @media(max-width:760px){.modal{grid-template-columns:1fr;top:auto;bottom:0;left:0;transform:none;width:100vw;max-height:90vh}.pm-info{padding:26px 22px}}
+
+/* Header search */
+.search{position:relative;flex:0 1 260px;margin:0 24px}
+.search input{width:100%;font:inherit;font-size:12px;padding:10px 12px 10px 32px;border:1px solid var(--line);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%236e6459' stroke-width='2'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath d='M9.5 9.5 13 13'/%3E%3C/svg%3E") no-repeat 11px center;color:var(--ink)}
+.search input:focus{outline:1px solid var(--ink)}
+.search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;min-width:280px;margin:0;padding:6px 0;list-style:none;background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 30px rgba(80,45,15,.15);z-index:10;max-height:70vh;overflow:auto}
+.search-results[hidden]{display:none}
+.search-results li[data-i]{display:flex;align-items:center;gap:12px;padding:9px 14px;cursor:pointer}
+.search-results li[data-i]:hover,.search-results li.on{background:#efe5d6}
+.search-results img,.search-icon{width:40px;height:40px;object-fit:cover;background:#fff;border:1px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--rust)}
+.search-results strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.search-results small{display:block;font-size:10px;color:var(--muted);margin-top:3px}
+.search-results mark{background:#f1d9a8;color:inherit;padding:0 1px}
+.search-count,.search-empty{padding:6px 14px 8px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.search-empty{text-transform:none;letter-spacing:0;font-size:12px;line-height:1.6;padding:10px 14px}
+@media(max-width:760px){header{flex-wrap:wrap;height:auto;padding-top:14px;padding-bottom:12px;row-gap:10px}header nav{top:100%}.search{order:5;flex:1 1 100%;margin:0}.search-results{min-width:0}}

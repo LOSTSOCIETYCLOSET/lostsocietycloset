@@ -55,8 +55,9 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 <div class="announcement">🍂 The Fall Collection is here — Fall Memories &amp; Fallen Freedom $60 · Forgotten Persona $75 🍂</div>
 <header>
 <a class="brand" href="#home">LOSTSOCIETY<small>®</small></a>
+<form class="search" role="search" data-search><input type="search" placeholder="Search products — try “fall”" aria-label="Search products" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results"><ul class="search-results" id="search-results" role="listbox" hidden></ul></form>
 <button class="mobile-cart" type="button" data-open-cart aria-label="Open cart">Cart (<span data-cart-count>0</span>)</button><button class="menu" id="menu" aria-label="Open menu">☰</button>
-<nav id="nav"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="#updates">Stay updated</a><button class="navbutton cart-toggle" type="button" data-open-cart>Cart (<span data-cart-count>0</span>)</button></nav>
+<nav id="nav"><a href="/essentials">Essentials</a><a href="#collection">Collection</a><a href="#story">Our story</a><a href="#updates">Stay updated</a><button class="navbutton cart-toggle" type="button" data-open-cart>Cart (<span data-cart-count>0</span>)</button></nav>
 </header>
 <main id="home">
 <section class="hero"><div class="leaves" aria-hidden="true"><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i></div>
@@ -124,4 +125,5 @@ document.addEventListener('cart:change',renderDrawer);renderDrawer();
 document.querySelectorAll('[data-open-cart]').forEach(b=>b.onclick=()=>{nav.classList.remove('open');menu.textContent='☰';openPanel(drawer)});
 
 </script>
+<script src="/search.js"></script>
 </body></html>

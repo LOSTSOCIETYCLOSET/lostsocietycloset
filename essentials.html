@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="LOSTSOCIETY Essentials — sweat suits, graphic tees and jackets from Lost Society Closet.">
+<meta name="robots" content="index, follow">
+<title>Essentials — Sweat Suits, Graphic Tees &amp; Jackets | LOSTSOCIETY</title>
+<link rel="canonical" href="https://lostsocietycloset.netlify.app/essentials">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="stylesheet" href="/shop.css">
+<style>
+:root{--paper:#f7f3ec;--ink:#1c1712;--muted:#6e6459;--line:#e2d9cc;--rust:#a8532a;--amber:#c98a2e;--bark:#2b1d14}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:130px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
+.announcement{padding:10px 20px;text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase;background:var(--bark);color:#f3e6d3}
+header{height:72px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{font-weight:900;letter-spacing:-.07em;font-size:20px}.brand small{font-size:9px;letter-spacing:0;vertical-align:top;margin-left:2px}
+nav{display:flex;align-items:center;gap:28px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}nav a:hover{opacity:.55}nav a.active{border-bottom:1px solid var(--ink);padding-bottom:3px}.navbutton{border:1px solid var(--ink);padding:11px 15px}.menu{display:none;background:none;border:0;font-size:23px}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:var(--rust)}
+.page-head{padding:60px 8vw 40px}
+h1{font-size:clamp(48px,7vw,96px);line-height:.88;letter-spacing:-.09em;margin:18px 0;font-weight:900;text-transform:uppercase}
+.page-head p{font-size:14px;line-height:1.8;color:#555;max-width:460px;margin:0}
+.cat-nav{position:sticky;top:72px;z-index:4;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex}
+.cat-nav a{flex:1;text-align:center;padding:16px 10px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;border-right:1px solid var(--line);transition:background .2s,color .2s}
+.cat-nav a:last-child{border-right:0}.cat-nav a:hover{background:var(--bark);color:#f3e6d3}
+section.content{padding:75px 8vw;border-bottom:1px solid var(--line)}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+.section-top h2{font-size:clamp(34px,5vw,60px);line-height:.95;letter-spacing:-.07em;text-transform:uppercase;margin:12px 0 0}
+.section-note{font-size:12px;color:#666;line-height:1.7;max-width:310px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product-card{background:#f1ebe1;min-height:230px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line)}
+.product-number{font-size:9px;letter-spacing:.13em;color:#777;text-transform:uppercase}
+.coming{font-size:clamp(22px,2.6vw,34px);font-weight:900;letter-spacing:-.07em;text-transform:uppercase;line-height:.95;color:var(--bark)}
+.product-bottom{border-top:1px solid #d9cdbb;padding-top:14px;display:flex;justify-content:space-between;gap:10px;align-items:center}.product-bottom span{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#777}
+footer{background:var(--bark);color:#fff;padding:26px 6vw;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:9px;text-transform:uppercase;letter-spacing:.1em}footer a:hover{opacity:.6}.footer-links{display:flex;gap:18px}
+@media(max-width:760px){header{padding:0 5vw}.cat-nav{position:static}.menu{display:block}nav{display:none;position:absolute;top:71px;left:0;right:0;padding:22px 6vw;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}.page-head{padding:45px 6vw 30px}.section-top{display:block}.section-note{margin-top:16px}.products{grid-template-columns:1fr}.product-card{min-height:170px}section.content{padding:60px 6vw}.cat-nav a{font-size:9px;letter-spacing:.1em;padding:14px 6px}}
+@media(max-width:450px){footer{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="announcement">Sweat suits · Graphic tees · Jackets — LOSTSOCIETY Essentials</div>
+<header>
+<a class="brand" href="/">LOSTSOCIETY<small>®</small></a>
+<form class="search" role="search" data-search><input type="search" placeholder="Search products — try “fall”" aria-label="Search products" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results"><ul class="search-results" id="search-results" role="listbox" hidden></ul></form>
+<button class="mobile-cart" type="button" data-open-cart aria-label="Open cart">Cart (<span data-cart-count>0</span>)</button><button class="menu" id="menu" aria-label="Open menu">☰</button>
+<nav id="nav"><a href="/essentials" class="active">Essentials</a><a href="/#collection">Fall Collection</a><a href="/#story">Our story</a><button class="navbutton cart-toggle" type="button" data-open-cart>Cart (<span data-cart-count>0</span>)</button></nav>
+</header>
+<main id="top">
+<section class="page-head"><div class="kicker">LOSTSOCIETY / Essentials</div><h1>Everyday<br>essentials.</h1><p>The pieces you live in. Sweat suits, graphic tees and jackets — built on the same idea as everything we make: simple, honest, and ours.</p></section>
+<nav class="cat-nav" aria-label="Essentials categories"><a href="#sweat-suits">Sweat suits</a><a href="#graphic-tees">Graphic tees</a><a href="#jackets">Jackets</a></nav>
+
+<section class="content" id="sweat-suits">
+<div class="section-top"><div><div class="kicker">01 / Sweat suits</div><h2>Sweat<br>Suits.</h2></div><p class="section-note">Matching hoodies and joggers made for every day. Full sets dropping soon.</p></div>
+<div class="products">
+<div class="product-card"><span class="product-number">Set 01</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Sweat suit</span><span>TBA</span></div></div>
+<div class="product-card"><span class="product-number">Set 02</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Sweat suit</span><span>TBA</span></div></div>
+<div class="product-card"><span class="product-number">Set 03</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Sweat suit</span><span>TBA</span></div></div>
+</div>
+</section>
+
+<section class="content" id="graphic-tees">
+<div class="section-top"><div><div class="kicker">02 / Graphic tees</div><h2>Graphic<br>Tees.</h2></div><p class="section-note">Our mark, our stories, printed on heavyweight cotton. New graphics on the way.</p></div>
+<div class="products">
+<div class="product-card"><span class="product-number">Tee 01</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Graphic tee</span><span>TBA</span></div></div>
+<div class="product-card"><span class="product-number">Tee 02</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Graphic tee</span><span>TBA</span></div></div>
+<div class="product-card"><span class="product-number">Tee 03</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Graphic tee</span><span>TBA</span></div></div>
+</div>
+</section>
+
+<section class="content" id="jackets">
+<div class="section-top"><div><div class="kicker">03 / Jackets</div><h2>Jackets.</h2></div><p class="section-note">Outerwear for the colder months. Stay tuned for the first release.</p></div>
+<div class="products">
+<div class="product-card"><span class="product-number">Jacket 01</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Jacket</span><span>TBA</span></div></div>
+<div class="product-card"><span class="product-number">Jacket 02</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Jacket</span><span>TBA</span></div></div>
+<div class="product-card"><span class="product-number">Jacket 03</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Jacket</span><span>TBA</span></div></div>
+</div>
+</section>
+</main>
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="cart-drawer" aria-label="Your cart" hidden>
+<div class="drawer-top"><strong>Your cart (<span data-cart-count>0</span>)</strong><button class="close" type="button" data-close aria-label="Close cart">×</button></div>
+<div class="drawer-lines" id="drawer-lines"></div>
+<div class="drawer-bottom"><div class="row"><span>Subtotal</span><strong id="drawer-subtotal">$0.00</strong></div><p>Shipping is calculated at checkout.</p><a class="button wide" href="/checkout" id="drawer-checkout">Checkout</a></div>
+</aside>
+<footer><div>LOSTSOCIETY® (Lost Society Closet) © <span id="year"></span></div><div class="footer-links"><a href="/">Home</a><a href="#top">Back to top ↑</a></div></footer>
+<script src="/cart.js"></script>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.textContent=nav.classList.contains('open')?'×':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const overlay=document.getElementById('overlay'),drawer=document.getElementById('cart-drawer');
+function openDrawer(){overlay.hidden=false;drawer.hidden=false;document.body.style.overflow='hidden';drawer.querySelector('[data-close]').focus()}
+function closeDrawer(){drawer.hidden=true;overlay.hidden=true;document.body.style.overflow=''}
+overlay.onclick=closeDrawer;document.querySelectorAll('[data-close]').forEach(b=>b.onclick=closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+function renderDrawer(){renderCartLines(document.getElementById('drawer-lines'));document.getElementById('drawer-subtotal').textContent=money(Cart.subtotal());document.getElementById('drawer-checkout').classList.toggle('disabled',!Cart.count())}
+document.addEventListener('cart:change',renderDrawer);renderDrawer();
+document.querySelectorAll('[data-open-cart]').forEach(b=>b.onclick=()=>{nav.classList.remove('open');menu.textContent='☰';openDrawer()});
+</script>
+<script src="/search.js"></script>
+</body></html>

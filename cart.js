@@ -2,7 +2,10 @@
 const LS_PRODUCTS={
   'fall-memories':{name:'Fall Memories',price:60,image:'/fall-memories.png',drop:'First drop'},
   'forgotten-persona':{name:'Forgotten Persona',price:75,image:'/forgotten-persona.png',drop:'Second drop'},
-  'fallen-freedom':{name:'Fallen Freedom',price:60,image:'/image.png',drop:'Third drop'}
+  'fallen-freedom':{name:'Fallen Freedom',price:60,image:'/image.png',drop:'Third drop'},
+  'ls-sweat-suit':{name:'Lost Society Sweat Suit',price:150,image:'/lost-society-sweat-suit.png',drop:'Sweat suit drop one',page:'/essentials',keywords:'full set hoodie pants sweatsuit sweats joggers essentials'},
+  'ls-sweat-hoodie':{name:'Lost Society Sweat Suit — Hoodie',price:75,image:'/lost-society-sweat-hoodie.png',drop:'Sweat suit drop one',page:'/essentials',keywords:'hoodie sweatshirt sweatsuit sweats essentials'},
+  'ls-sweat-pants':{name:'Lost Society Sweat Suit — Pants',price:75,image:'/lost-society-sweat-pants.png',drop:'Sweat suit drop one',page:'/essentials',keywords:'pants joggers sweatpants sweatsuit sweats essentials'}
 };
 const LS_SIZES=['S','M','L','XL','XXL'];
 const Cart={

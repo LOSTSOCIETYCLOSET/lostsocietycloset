@@ -40,7 +40,7 @@ footer{background:var(--bark);color:#fff;padding:26px 6vw;display:flex;justify-c
 </style>
 </head>
 <body>
-<div class="announcement">Sweat suits · Graphic tees · Jackets — LOSTSOCIETY Essentials</div>
+<div class="announcement">Drop one is live — Lost Society Sweat Suit, $75 per piece</div>
 <header>
 <a class="brand" href="/">LOSTSOCIETY<small>®</small></a>
 <form class="search" role="search" data-search><input type="search" placeholder="Search products — try “fall”" aria-label="Search products" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results"><ul class="search-results" id="search-results" role="listbox" hidden></ul></form>
@@ -52,9 +52,9 @@ footer{background:var(--bark);color:#fff;padding:26px 6vw;display:flex;justify-c
 <nav class="cat-nav" aria-label="Essentials categories"><a href="#sweat-suits">Sweat suits</a><a href="#graphic-tees">Graphic tees</a><a href="#jackets">Jackets</a></nav>
 
 <section class="content" id="sweat-suits">
-<div class="section-top"><div><div class="kicker">01 / Sweat suits</div><h2>Sweat<br>Suits.</h2></div><p class="section-note">Matching hoodies and joggers made for every day. Full sets dropping soon.</p></div>
+<div class="section-top"><div><div class="kicker">01 / Sweat suits</div><h2>Sweat<br>Suits.</h2></div><p class="section-note">Matching hoodies and joggers made for every day. Drop one is here — grab the full set or each piece on its own.</p></div>
 <div class="products">
-<div class="product-card"><span class="product-number">Set 01</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Sweat suit</span><span>TBA</span></div></div>
+<button type="button" class="product-card shoppable" data-product="ls-sweat-suit" data-options="ls-sweat-suit ls-sweat-hoodie ls-sweat-pants"><span class="product-number">DROP ONE</span><img src="/lost-society-sweat-suit.png" alt="Lost Society Sweat Suit — hoodie and pants"><div class="product-bottom"><span class="product-name">Lost Society Sweat Suit</span><span class="product-name">$75 each</span></div><span class="shop-hint">Buy the set or each piece →</span></button>
 <div class="product-card"><span class="product-number">Set 02</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Sweat suit</span><span>TBA</span></div></div>
 <div class="product-card"><span class="product-number">Set 03</span><div class="coming">Coming<br>soon</div><div class="product-bottom"><span>Sweat suit</span><span>TBA</span></div></div>
 </div>
@@ -79,6 +79,16 @@ footer{background:var(--bark);color:#fff;padding:26px 6vw;display:flex;justify-c
 </section>
 </main>
 <div class="overlay" id="overlay" hidden></div>
+<div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="pm-name" hidden>
+<button class="close" type="button" data-close aria-label="Close">×</button>
+<div class="pm-image"><img id="pm-image" src="" alt=""></div>
+<div class="pm-info"><span class="kicker" id="pm-drop"></span><h3 id="pm-name"></h3><p class="pm-price" id="pm-price"></p>
+<p class="pm-desc">Washed grey heavyweight fleece with the LOSTSOCIETY globe and flame graphics. Buy the matching set, or pick up the hoodie or pants on their own — $75 each.</p>
+<div class="pm-label">Option</div><div class="sizes" id="pm-options"></div>
+<div class="pm-label">Size</div><div class="sizes" id="pm-sizes"></div>
+<div class="pm-label">Quantity</div><div class="qty big"><button type="button" id="pm-dec" aria-label="Decrease quantity">−</button><span id="pm-qty">1</span><button type="button" id="pm-inc" aria-label="Increase quantity">+</button></div>
+<button class="button wide" type="button" id="pm-add">Add to cart</button><p class="pm-msg" id="pm-msg" role="status"></p></div>
+</div>
 <aside class="drawer" id="cart-drawer" aria-label="Your cart" hidden>
 <div class="drawer-top"><strong>Your cart (<span data-cart-count>0</span>)</strong><button class="close" type="button" data-close aria-label="Close cart">×</button></div>
 <div class="drawer-lines" id="drawer-lines"></div>
@@ -91,11 +101,40 @@ const menu=document.getElementById('menu'),nav=document.getElementById('nav');
 menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.textContent=nav.classList.contains('open')?'×':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
-const overlay=document.getElementById('overlay'),drawer=document.getElementById('cart-drawer');
-function openDrawer(){overlay.hidden=false;drawer.hidden=false;document.body.style.overflow='hidden';drawer.querySelector('[data-close]').focus()}
-function closeDrawer(){drawer.hidden=true;overlay.hidden=true;document.body.style.overflow=''}
+const overlay=document.getElementById('overlay'),modal=document.getElementById('product-modal'),drawer=document.getElementById('cart-drawer');
+function openPanel(el){[modal,drawer].forEach(x=>x.hidden=true);overlay.hidden=false;el.hidden=false;document.body.style.overflow='hidden';el.querySelector('[data-close]').focus()}
+function openDrawer(){openPanel(drawer)}
+function closeDrawer(){[modal,drawer,overlay].forEach(x=>x.hidden=true);document.body.style.overflow=''}
 overlay.onclick=closeDrawer;document.querySelectorAll('[data-close]').forEach(b=>b.onclick=closeDrawer);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+const OPTION_LABELS={'ls-sweat-suit':'Full set','ls-sweat-hoodie':'Hoodie','ls-sweat-pants':'Pants'};
+let current=null,size=null,qty=1;
+function pickOption(id){
+  current=id;const p=LS_PRODUCTS[id];
+  document.getElementById('pm-image').src=p.image;document.getElementById('pm-image').alt=p.name;
+  document.getElementById('pm-name').textContent=p.name;document.getElementById('pm-price').textContent=money(p.price);
+  document.querySelectorAll('#pm-options button').forEach(b=>b.classList.toggle('on',b.dataset.option===id));
+}
+document.querySelectorAll('[data-product]').forEach(card=>card.addEventListener('click',()=>{
+  const options=(card.dataset.options||card.dataset.product).split(' '),pick=card.dataset.pick;delete card.dataset.pick;
+  size=null;qty=1;
+  document.getElementById('pm-drop').textContent=LS_PRODUCTS[options[0]].drop;
+  document.getElementById('pm-qty').textContent=qty;document.getElementById('pm-msg').textContent='';
+  const opts=document.getElementById('pm-options');
+  opts.innerHTML=options.map(id=>`<button type="button" data-option="${id}">${OPTION_LABELS[id]||LS_PRODUCTS[id].name} · ${money(LS_PRODUCTS[id].price)}</button>`).join('');
+  opts.querySelectorAll('button').forEach(b=>b.onclick=()=>pickOption(b.dataset.option));
+  pickOption(options.includes(pick)?pick:options[0]);
+  const sizes=document.getElementById('pm-sizes');
+  sizes.innerHTML=LS_SIZES.map(s=>`<button type="button" data-size="${s}">${s}</button>`).join('');
+  sizes.querySelectorAll('button').forEach(b=>b.onclick=()=>{size=b.dataset.size;sizes.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pm-msg').textContent=''});
+  openPanel(modal);
+}));
+document.getElementById('pm-dec').onclick=()=>{qty=Math.max(1,qty-1);document.getElementById('pm-qty').textContent=qty};
+document.getElementById('pm-inc').onclick=()=>{qty=Math.min(10,qty+1);document.getElementById('pm-qty').textContent=qty};
+document.getElementById('pm-add').onclick=()=>{
+  if(!size){document.getElementById('pm-msg').textContent='Pick a size first.';return}
+  Cart.add(current,size,qty);openPanel(drawer);
+};
 function renderDrawer(){renderCartLines(document.getElementById('drawer-lines'));document.getElementById('drawer-subtotal').textContent=money(Cart.subtotal());document.getElementById('drawer-checkout').classList.toggle('disabled',!Cart.count())}
 document.addEventListener('cart:change',renderDrawer);renderDrawer();
 document.querySelectorAll('[data-open-cart]').forEach(b=>b.onclick=()=>{nav.classList.remove('open');menu.textContent='☰';openDrawer()});

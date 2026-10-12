@@ -27,10 +27,11 @@
 <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png?v=2">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="stylesheet" href="/shop.css">
 <style>
-:root{--paper:#f7f7f5;--ink:#171717;--muted:#686868;--line:#dededb}
+:root{--paper:#f7f3ec;--ink:#1c1712;--muted:#6e6459;--line:#e2d9cc;--rust:#a8532a;--amber:#c98a2e;--bark:#2b1d14}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:75px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
-.announcement{padding:10px 20px;text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase;background:#171717;color:#fff}
+.announcement{padding:10px 20px;text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase;background:var(--bark);color:#f3e6d3}
 header{height:72px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
 .brand{font-weight:900;letter-spacing:-.07em;font-size:20px}.brand small{font-size:9px;letter-spacing:0;vertical-align:top;margin-left:2px}
 nav{display:flex;align-items:center;gap:28px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}nav a:hover{opacity:.55}.navbutton{border:1px solid var(--ink);padding:11px 15px}.menu{display:none;background:none;border:0;font-size:23px}
@@ -52,23 +53,23 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 </style>
 </head>
 <body>
-<div class="announcement">LOSTSOCIETY — FIRST DROP: FALL MEMORIES — $60</div>
+<div class="announcement">🍂 The Fall Collection is here — Fall Memories &amp; Freedom — $60 🍂</div>
 <header>
 <a class="brand" href="#home">LOSTSOCIETY<small>®</small></a>
-<button class="menu" id="menu" aria-label="Open menu">☰</button>
-<nav id="nav"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="#founders">Founders</a><a class="navbutton" href="#updates">Stay updated</a></nav>
+<button class="mobile-cart" type="button" data-open-cart aria-label="Open cart">Cart (<span data-cart-count>0</span>)</button><button class="menu" id="menu" aria-label="Open menu">☰</button>
+<nav id="nav"><a href="#collection">Collection</a><a href="#story">Our story</a><a href="#founders">Founders</a><a href="#updates">Stay updated</a><button class="navbutton cart-toggle" type="button" data-open-cart>Cart (<span data-cart-count>0</span>)</button></nav>
 </header>
 <main id="home">
-<section class="hero">
-<div><div class="kicker">Independent streetwear · Est. by friends</div><h1>Wear your<br>own story.</h1><p>LOSTSOCIETY is for the people who do things their own way. Simple pieces, a clear point of view, and a community built around the people wearing it.</p><div class="buttons"><a class="button" href="#collection">Explore ↘</a><a class="button light" href="#story">About us</a></div></div>
+<section class="hero"><div class="leaves" aria-hidden="true"><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i></div>
+<div><div class="kicker">Independent streetwear · Fall season · Est. by friends</div><h1>Wear your<br>own story.</h1><p>LOSTSOCIETY is for the people who do things their own way. Simple pieces, a clear point of view, and a community built around the people wearing it.</p><div class="buttons"><a class="button" href="#collection">Explore ↘</a><a class="button light" href="#story">About us</a></div></div>
 <div class="logo-panel"><img src="lostsociety-logo.png" alt="LOSTSOCIETY globe logo"><span class="logo-caption">The mark. The meaning. The society.</span></div>
 </section>
-<div class="strip"><span>Independent by nature</span><span>Built with our people</span><span>LOSTSOCIETY®</span></div>
+<div class="strip"><span>Independent by nature</span><span>🍁 Fall collection out now</span><span>LOSTSOCIETY®</span></div>
 <section class="content" id="collection">
-<div class="section-top"><div><div class="kicker">01 / The collection</div><h2>Our first drop.<br>Coming soon.</h2></div><p class="section-note">We're working on the first LOSTSOCIETY collection. The pieces will be revealed here when they're ready.</p></div>
+<div class="section-top"><div><div class="kicker">01 / Fall '26</div><h2 class="fall-title">Fall<br>Collection.</h2></div><p class="section-note">Our first season. Tap a drop to pick your size and add it to your cart.</p></div>
 <div class="products">
-<article class="product-card"><span class="product-number">FIRST DROP</span><img src="/fall-memories.png" alt="Fall Memories — LOSTSOCIETY first drop" style="width:100%;height:auto;display:block;margin:14px 0"><div class="product-bottom"><span style="color:#171717;font-weight:700">Fall Memories</span><span style="color:#171717;font-weight:700">$60</span></div></article>
-<article class="product-card"><span class="product-number">SECOND DROP</span><img src="/freedom.png" alt="Freedom — LOSTSOCIETY second drop" style="width:100%;height:auto;display:block;margin:14px 0"><div class="product-bottom"><span style="color:#171717;font-weight:700">Freedom</span><span style="color:#171717;font-weight:700">$60</span></div></article>
+<button type="button" class="product-card shoppable" data-product="fall-memories"><span class="product-number">FIRST DROP</span><img src="/fall-memories.png" alt="Fall Memories — LOSTSOCIETY first drop"><div class="product-bottom"><span class="product-name">Fall Memories</span><span class="product-name">$60</span></div><span class="shop-hint">View &amp; add to cart →</span></button>
+<button type="button" class="product-card shoppable" data-product="freedom"><span class="product-number">SECOND DROP</span><img src="/freedom.png" alt="Freedom — LOSTSOCIETY second drop"><div class="product-bottom"><span class="product-name">Freedom</span><span class="product-name">$60</span></div><span class="shop-hint">View &amp; add to cart →</span></button>
 <article class="product-card"><span class="product-number">THIRD DROP</span><div class="coming">Coming<br>Soon.</div><div class="product-bottom"><span>LOSTSOCIETY</span><span>03</span></div></article>
 </div>
 </section>
@@ -81,12 +82,53 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 </div></section>
 <section class="updates" id="updates"><div><div class="kicker">04 / Stay in the loop</div><h2>More soon.</h2><p>Follow along while we get the first collection ready.</p></div></section>
 </main>
+<div class="overlay" id="overlay" hidden></div>
+<div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="pm-name" hidden>
+<button class="close" type="button" data-close aria-label="Close">×</button>
+<div class="pm-image"><img id="pm-image" src="" alt=""></div>
+<div class="pm-info"><span class="kicker" id="pm-drop"></span><h3 id="pm-name"></h3><p class="pm-price" id="pm-price"></p>
+<p class="pm-desc">From the LOSTSOCIETY Fall Collection. Limited first run — made by friends.</p>
+<div class="pm-label">Size</div><div class="sizes" id="pm-sizes"></div>
+<div class="pm-label">Quantity</div><div class="qty big"><button type="button" id="pm-dec" aria-label="Decrease quantity">−</button><span id="pm-qty">1</span><button type="button" id="pm-inc" aria-label="Increase quantity">+</button></div>
+<button class="button wide" type="button" id="pm-add">Add to cart</button><p class="pm-msg" id="pm-msg" role="status"></p></div>
+</div>
+<aside class="drawer" id="cart-drawer" aria-label="Your cart" hidden>
+<div class="drawer-top"><strong>Your cart (<span data-cart-count>0</span>)</strong><button class="close" type="button" data-close aria-label="Close cart">×</button></div>
+<div class="drawer-lines" id="drawer-lines"></div>
+<div class="drawer-bottom"><div class="row"><span>Subtotal</span><strong id="drawer-subtotal">$0.00</strong></div><p>Shipping is calculated at checkout.</p><a class="button wide" href="/checkout" id="drawer-checkout">Checkout</a></div>
+</aside>
 <footer><div>LOSTSOCIETY® (Lost Society Closet) © <span id="year"></span></div><div class="footer-links"><a href="#home">Back to top ↑</a><a href="#founders">Founders</a></div></footer>
+<script src="/cart.js"></script>
 <script>
 const menu=document.getElementById('menu'),nav=document.getElementById('nav');
 menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.textContent=nav.classList.contains('open')?'×':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
+const overlay=document.getElementById('overlay'),modal=document.getElementById('product-modal'),drawer=document.getElementById('cart-drawer');
+let current=null,size=null,qty=1;
+function openPanel(el){[modal,drawer].forEach(x=>x.hidden=true);overlay.hidden=false;el.hidden=false;document.body.style.overflow='hidden';el.querySelector('[data-close]').focus()}
+function closePanels(){[modal,drawer,overlay].forEach(x=>x.hidden=true);document.body.style.overflow=''}
+overlay.onclick=closePanels;document.querySelectorAll('[data-close]').forEach(b=>b.onclick=closePanels);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanels()});
+document.querySelectorAll('[data-product]').forEach(card=>card.addEventListener('click',()=>{
+  current=card.dataset.product;const p=LS_PRODUCTS[current];size=null;qty=1;
+  document.getElementById('pm-image').src=p.image;document.getElementById('pm-image').alt=p.name;
+  document.getElementById('pm-drop').textContent=p.drop+' · Fall Collection';document.getElementById('pm-name').textContent=p.name;
+  document.getElementById('pm-price').textContent=money(p.price);document.getElementById('pm-qty').textContent=qty;document.getElementById('pm-msg').textContent='';
+  const sizes=document.getElementById('pm-sizes');
+  sizes.innerHTML=LS_SIZES.map(s=>`<button type="button" data-size="${s}">${s}</button>`).join('');
+  sizes.querySelectorAll('button').forEach(b=>b.onclick=()=>{size=b.dataset.size;sizes.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pm-msg').textContent=''});
+  openPanel(modal);
+}));
+document.getElementById('pm-dec').onclick=()=>{qty=Math.max(1,qty-1);document.getElementById('pm-qty').textContent=qty};
+document.getElementById('pm-inc').onclick=()=>{qty=Math.min(10,qty+1);document.getElementById('pm-qty').textContent=qty};
+document.getElementById('pm-add').onclick=()=>{
+  if(!size){document.getElementById('pm-msg').textContent='Pick a size first.';return}
+  Cart.add(current,size,qty);openPanel(drawer);
+};
+function renderDrawer(){renderCartLines(document.getElementById('drawer-lines'));document.getElementById('drawer-subtotal').textContent=money(Cart.subtotal());document.getElementById('drawer-checkout').classList.toggle('disabled',!Cart.count())}
+document.addEventListener('cart:change',renderDrawer);renderDrawer();
+document.querySelectorAll('[data-open-cart]').forEach(b=>b.onclick=()=>{nav.classList.remove('open');menu.textContent='☰';openPanel(drawer)});
 
 </script>
 </body></html>

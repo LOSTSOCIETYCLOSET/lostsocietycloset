@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Checkout | LOSTSOCIETY</title>
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png?v=2">
+<link rel="stylesheet" href="/shop.css">
+<style>
+:root{--paper:#f7f3ec;--ink:#1c1712;--muted:#6e6459;--line:#e2d9cc;--rust:#a8532a;--amber:#c98a2e;--bark:#2b1d14}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
+.announcement{padding:10px 20px;text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase;background:var(--bark);color:#f3e6d3}
+header{height:72px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{font-weight:900;letter-spacing:-.07em;font-size:20px}.brand small{font-size:9px;letter-spacing:0;vertical-align:top;margin-left:2px}
+.back{font-size:11px;text-transform:uppercase;letter-spacing:.1em}.back:hover{opacity:.55}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:var(--rust)}
+h1{font-size:clamp(40px,6vw,72px);line-height:.9;letter-spacing:-.08em;text-transform:uppercase;margin:12px 0 0}
+.wrap{padding:55px 8vw 85px}
+.layout{display:grid;grid-template-columns:1.3fr 1fr;gap:5vw;margin-top:40px;align-items:start}
+fieldset{border:0;border-top:1px solid var(--line);padding:24px 0 8px;margin:0}
+legend{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:0 0 4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+input,select{font:inherit;font-size:14px;padding:13px 12px;border:1px solid var(--line);background:#fff;color:var(--ink);letter-spacing:0;text-transform:none}
+input:focus,select:focus{outline:1px solid var(--ink)}
+input:disabled{background:#efe9df;color:#998f83;cursor:not-allowed}
+.notice{background:#f1e2cc;border:1px solid #e0c49c;padding:16px 18px;font-size:12px;line-height:1.7;margin:14px 0 18px}
+.notice strong{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:4px}
+.button{display:inline-block;background:var(--ink);color:#fff;padding:15px 19px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--ink)}
+.button:disabled{opacity:.45;cursor:not-allowed}
+.summary{background:#fff;border:1px solid var(--line);padding:26px;position:sticky;top:20px}
+.summary h2{font-size:12px;letter-spacing:.15em;text-transform:uppercase;margin:0}
+.totals{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}.totals .total{font-size:16px;font-weight:700;border-top:1px solid var(--line);padding-top:12px;margin-top:10px}
+.muted{color:var(--muted)}
+footer{background:var(--bark);color:#fff;padding:26px 6vw;font-size:9px;text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.summary{position:static;order:-1}.wrap{padding:40px 6vw 65px}}
+@media(max-width:450px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="announcement">🍂 The Fall Collection — LOSTSOCIETY 🍂</div>
+<header><a class="brand" href="/">LOSTSOCIETY<small>®</small></a><a class="back" href="/#collection">← Keep shopping</a></header>
+<main class="wrap">
+<div class="kicker">Fall Collection · Checkout</div><h1>Checkout.</h1>
+<div class="layout">
+<form id="checkout-form" novalidate>
+<fieldset><legend>Contact</legend><div class="grid">
+<label class="full">Email<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
+</div></fieldset>
+<fieldset><legend>Shipping address</legend><div class="grid">
+<label>First name<input name="first" autocomplete="given-name"></label>
+<label>Last name<input name="last" autocomplete="family-name"></label>
+<label class="full">Address<input name="address" autocomplete="address-line1"></label>
+<label class="full">Apartment, suite, etc. (optional)<input name="address2" autocomplete="address-line2"></label>
+<label>City<input name="city" autocomplete="address-level2"></label>
+<label>State<input name="state" autocomplete="address-level1"></label>
+<label>ZIP code<input name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+<label>Country<select name="country" autocomplete="country"><option>United States</option></select></label>
+</div></fieldset>
+<fieldset><legend>Shipping method</legend>
+<p class="muted" style="font-size:12px;margin:4px 0 18px">Shipping options will show up here once shipping is set up.</p>
+</fieldset>
+<fieldset><legend>Payment</legend>
+<div class="notice"><strong>Payments open soon</strong>We're still setting up shipping, so orders can't be placed yet. Your cart is saved on this device — come back when the Fall Collection opens for orders.</div>
+<div class="grid">
+<label class="full">Card number<input disabled placeholder="1234 1234 1234 1234"></label>
+<label>Expiration<input disabled placeholder="MM / YY"></label>
+<label>Security code<input disabled placeholder="CVC"></label>
+<label class="full">Name on card<input disabled></label>
+</div></fieldset>
+<button class="button wide" type="submit" id="pay" disabled>Pay now — coming soon</button>
+</form>
+<aside class="summary"><h2>Order summary (<span data-cart-count>0</span>)</h2>
+<div id="summary-lines"></div>
+<div class="totals">
+<div class="row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+<div class="row"><span>Shipping</span><span class="muted">Not available yet</span></div>
+<div class="row total"><span>Total</span><span id="total">$0.00</span></div>
+</div></aside>
+</div>
+</main>
+<footer>LOSTSOCIETY® (Lost Society Closet)</footer>
+<script src="/cart.js"></script>
+<script>
+function render(){renderCartLines(document.getElementById('summary-lines'));const s=money(Cart.subtotal());document.getElementById('subtotal').textContent=s;document.getElementById('total').textContent=s}
+document.addEventListener('cart:change',render);render();
+document.getElementById('checkout-form').addEventListener('submit',e=>e.preventDefault());
+</script>
+</body></html>

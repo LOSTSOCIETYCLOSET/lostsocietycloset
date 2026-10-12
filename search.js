@@ -1,7 +1,7 @@
 // Header search with live suggestions — matches product names, drops and categories
 const LS_SEARCH_ITEMS=[
-  ...Object.entries(LS_PRODUCTS).map(([id,p])=>({id,name:p.name,image:p.image,meta:p.drop+' · '+money(p.price),keywords:p.drop+' fall collection'})),
-  {name:'Sweat suits',href:'/essentials#sweat-suits',meta:'Essentials · Coming soon',keywords:'sweatsuit sweats hoodie joggers set essentials'},
+  ...Object.entries(LS_PRODUCTS).map(([id,p])=>({id,name:p.name,image:p.image,meta:p.drop+' · '+money(p.price),keywords:p.drop+' '+(p.keywords||'fall collection')})),
+  {name:'Sweat suits',href:'/essentials#sweat-suits',meta:'Essentials · Drop one out now',keywords:'sweatsuit sweats hoodie joggers set essentials'},
   {name:'Graphic tees',href:'/essentials#graphic-tees',meta:'Essentials · Coming soon',keywords:'tee t-shirt shirt graphic essentials'},
   {name:'Jackets',href:'/essentials#jackets',meta:'Essentials · Coming soon',keywords:'jacket outerwear coat essentials'}
 ];
@@ -17,11 +17,13 @@ function highlight(name,q){
   q.split(/\s+/).filter(Boolean).forEach(w=>{const safe=escapeHtml(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');html=html.replace(new RegExp('('+safe+')','ig'),'<mark>$1</mark>')});
   return html;
 }
+// A card can sell several options (e.g. sweat suit set / hoodie / pants) listed in data-options
+const findProductCard=id=>document.querySelector(`[data-product="${CSS.escape(id)}"]`)||[...document.querySelectorAll('[data-options]')].find(c=>c.dataset.options.split(' ').includes(id));
 function openSearchResult(item){
   if(item.href){location.href=item.href;return}
-  const card=document.querySelector(`[data-product="${item.id}"]`);
-  if(card){card.scrollIntoView({behavior:'smooth',block:'center'});card.click()}
-  else location.href='/?product='+encodeURIComponent(item.id);
+  const card=findProductCard(item.id);
+  if(card){card.dataset.pick=item.id;card.scrollIntoView({behavior:'smooth',block:'center'});card.click()}
+  else location.href=(LS_PRODUCTS[item.id]?.page||'/')+'?product='+encodeURIComponent(item.id);
 }
 document.querySelectorAll('[data-search]').forEach(box=>{
   const input=box.querySelector('input'),list=box.querySelector('.search-results');
@@ -55,5 +57,5 @@ document.querySelectorAll('[data-search]').forEach(box=>{
   box.addEventListener('submit',e=>e.preventDefault());
 });
 // Opening a product picked from search on another page (/?product=id)
-(()=>{const id=new URLSearchParams(location.search).get('product'),card=id&&document.querySelector(`[data-product="${CSS.escape(id)}"]`);
-  if(card){history.replaceState(null,'',location.pathname+location.hash);card.click()}})();
+(()=>{const id=new URLSearchParams(location.search).get('product'),card=id&&findProductCard(id);
+  if(card){card.dataset.pick=id;history.replaceState(null,'',location.pathname+location.hash);card.click()}})();

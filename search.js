@@ -2,8 +2,7 @@
 const LS_SEARCH_ITEMS=[
   ...Object.entries(LS_PRODUCTS).map(([id,p])=>({id,name:p.name,image:p.image,meta:p.drop+' · '+money(p.price),keywords:p.drop+' '+(p.keywords||'fall collection')})),
   {name:'Sweat suits',href:'/essentials#sweat-suits',meta:'Essentials · Drop one out now',keywords:'sweatsuit sweats hoodie joggers set essentials'},
-  {name:'Graphic tees',href:'/essentials#graphic-tees',meta:'Essentials · Coming soon',keywords:'tee t-shirt shirt graphic essentials'},
-  {name:'Jackets',href:'/essentials#jackets',meta:'Essentials · Coming soon',keywords:'jacket outerwear coat essentials'}
+  {name:'Graphic tees',href:'/essentials#graphic-tees',meta:'Essentials · Coming soon',keywords:'tee t-shirt shirt graphic essentials'}
 ];
 const escapeHtml=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function searchItems(q){
@@ -35,7 +34,7 @@ document.querySelectorAll('[data-search]').forEach(box=>{
     results=searchItems(q);active=-1;
     list.innerHTML=results.length
       ?`<li class="search-count">${results.length} result${results.length>1?'s':''} for “${escapeHtml(q)}”</li>`+results.map((r,i)=>`<li role="option" id="sr-${i}" data-i="${i}">${r.image?`<img src="${r.image}" alt="">`:'<span class="search-icon">↘</span>'}<span><strong>${highlight(r.name,q)}</strong><small>${escapeHtml(r.meta)}</small></span></li>`).join('')
-      :`<li class="search-empty">No products match “${escapeHtml(q)}”. Try “fall”, “tees” or “jackets”.</li>`;
+      :`<li class="search-empty">No products match “${escapeHtml(q)}”. Try “fall”, “tees” or “sweat suits”.</li>`;
     list.hidden=false;input.setAttribute('aria-expanded','true');
     list.querySelectorAll('[data-i]').forEach(li=>li.onmousedown=e=>{e.preventDefault();close();input.blur();openSearchResult(results[+li.dataset.i])});
   }

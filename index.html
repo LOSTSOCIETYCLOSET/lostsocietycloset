@@ -83,6 +83,7 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 <div class="pm-info"><span class="kicker" id="pm-drop"></span><h3 id="pm-name"></h3><p class="pm-price" id="pm-price"></p>
 <p class="pm-desc">From the LOSTSOCIETY Fall Collection. Limited first run — made by friends.</p>
 <div class="pm-label">Size</div><div class="sizes" id="pm-sizes"></div>
+<div class="size-chart" id="pm-chart" hidden><div class="pm-label">Size chart</div><a id="pm-chart-link" href="" target="_blank" rel="noopener"><img id="pm-chart-img" src="" alt="" loading="lazy"></a></div>
 <div class="pm-label">Quantity</div><div class="qty big"><button type="button" id="pm-dec" aria-label="Decrease quantity">−</button><span id="pm-qty">1</span><button type="button" id="pm-inc" aria-label="Increase quantity">+</button></div>
 <button class="button wide" type="button" id="pm-add">Add to cart</button><p class="pm-msg" id="pm-msg" role="status"></p></div>
 </div>
@@ -112,6 +113,8 @@ document.querySelectorAll('[data-product]').forEach(card=>card.addEventListener(
   const sizes=document.getElementById('pm-sizes');
   sizes.innerHTML=LS_SIZES.map(s=>`<button type="button" data-size="${s}">${s}</button>`).join('');
   sizes.querySelectorAll('button').forEach(b=>b.onclick=()=>{size=b.dataset.size;sizes.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pm-msg').textContent=''});
+  const chart=document.getElementById('pm-chart');chart.hidden=!p.sizeChart;
+  if(p.sizeChart){document.getElementById('pm-chart-img').src=p.sizeChart;document.getElementById('pm-chart-img').alt=p.name+' size chart';document.getElementById('pm-chart-link').href=p.sizeChart}
   openPanel(modal);
 }));
 document.getElementById('pm-dec').onclick=()=>{qty=Math.max(1,qty-1);document.getElementById('pm-qty').textContent=qty};

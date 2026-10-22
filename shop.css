@@ -69,3 +69,9 @@ footer{background:var(--bark)}
 .search-count,.search-empty{padding:6px 14px 8px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
 .search-empty{text-transform:none;letter-spacing:0;font-size:12px;line-height:1.6;padding:10px 14px}
 @media(max-width:760px){header{flex-wrap:wrap;height:auto;padding-top:14px;padding-bottom:12px;row-gap:10px}header nav{top:100%}.search{order:5;flex:1 1 100%;margin:0}.search-results{min-width:0}}
+
+/* Footer legal links */
+.footer-links{flex-wrap:wrap;line-height:1.8}
+.legal-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer a:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+.legal-footer a:hover{text-decoration:underline}

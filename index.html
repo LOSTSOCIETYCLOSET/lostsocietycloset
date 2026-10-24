@@ -31,7 +31,12 @@
 <style>
 :root{--paper:#f7f3ec;--ink:#1c1712;--muted:#6e6459;--line:#e2d9cc;--rust:#a8532a;--amber:#c98a2e;--bark:#2b1d14}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:75px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
-.announcement{overflow:hidden;min-height:34px}.promo-out{animation:promo-out .55s ease-in forwards}.promo-in{animation:promo-in .55s ease-out both}@keyframes promo-out{from{transform:translateX(0);opacity:1}to{transform:translateX(110%);opacity:0}}@keyframes promo-in{from{transform:translateX(-110%);opacity:0}to{transform:translateX(0);opacity:1}}@media(prefers-reduced-motion:reduce){.promo-out,.promo-in{animation:none}}
+.announcement{overflow:hidden;min-height:34px}
+#promo-announcement{padding-left:0;padding-right:0}
+.promo-track{display:flex;width:max-content;animation:promo-scroll 28s linear infinite}
+.promo-group{display:flex;align-items:center;justify-content:space-around;flex-shrink:0;min-width:100vw;gap:64px;padding:0 32px;white-space:nowrap}
+@keyframes promo-scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.promo-track{animation:none;width:100%}.promo-group{min-width:0;width:100%;white-space:normal;flex-wrap:wrap;gap:12px}.promo-group[aria-hidden]{display:none}}
 .announcement{padding:10px 20px;text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase;background:var(--bark);color:#f3e6d3}
 header{height:72px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
 .brand{font-weight:900;letter-spacing:-.07em;font-size:20px}.brand small{font-size:9px;letter-spacing:0;vertical-align:top;margin-left:2px}
@@ -53,7 +58,12 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 </style>
 </head>
 <body>
-<div class="announcement" id="promo-announcement">🍂 The fall collection is here 🍁 Explore our first season.</div>
+<div class="announcement" id="promo-announcement">
+<div class="promo-track" id="promo-track">
+<div class="promo-group"><span>🍂 The fall collection is here 🍁 Explore our first season.</span><span>⚠️ Warning: Website is still under construction. Stay tuned.</span></div>
+<div class="promo-group" aria-hidden="true"><span>🍂 The fall collection is here 🍁 Explore our first season.</span><span>⚠️ Warning: Website is still under construction. Stay tuned.</span></div>
+</div>
+</div>
 <header>
 <a class="brand" href="#home">LOSTSOCIETY<small>®</small></a>
 <form class="search" role="search" data-search><input type="search" placeholder="Search products — try “fall”" aria-label="Search products" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results"><ul class="search-results" id="search-results" role="listbox" hidden></ul></form>
@@ -62,7 +72,7 @@ footer{background:#171717;color:#fff;padding:26px 6vw;display:flex;justify-conte
 </header>
 <main id="home">
 <section class="hero"><div class="leaves" aria-hidden="true"><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i><i>🍂</i><i>🍁</i></div>
-<div><div class="kicker">LOSTSOCIETY</div><h1 id="promo-heading">Fall<br>collection<br>is here.</h1><p id="promo-description">🍂 Our first season. Explore the Fall Collection and find your next piece. 🍁</p><div class="buttons"><a class="button" href="#collection">Explore ↘</a><a class="button light" href="#story">About us</a><button class="button light" type="button" id="promo-pause" aria-pressed="false">Pause messages</button></div></div>
+<div><div class="kicker">LOSTSOCIETY</div><h1 id="promo-heading">Fall<br>collection<br>is here.</h1><p id="promo-description">🍂 Our first season. Explore the Fall Collection and find your next piece. 🍁</p><div class="buttons"><a class="button" href="#collection">Explore ↘</a><a class="button light" href="#story">About us</a></div></div>
 <div class="logo-panel"><img src="lostsociety-logo.png" alt="LOSTSOCIETY globe logo"><span class="logo-caption">The mark. The meaning. The society.</span></div>
 </section>
 <div class="strip"><span>Independent by nature</span><span>🍁 Fall collection out now</span><span>LOSTSOCIETY®</span></div>
@@ -130,5 +140,4 @@ document.querySelectorAll('[data-open-cart]').forEach(b=>b.onclick=()=>{nav.clas
 
 </script>
 <script src="/search.js"></script>
-<script src="/promo.js"></script>
 </body></html>
